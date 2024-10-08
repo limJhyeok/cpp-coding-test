@@ -2,26 +2,20 @@
 #include <iostream>
 using namespace std;
 
-bool isEven(int number)
-{
-  if (number % 2 == 0)
-  {
+bool isEven(int number){
+  if (number % 2 == 0){
     return true;
   }
   return false;
 }
 
-int main()
-{
-  int number;
-  cin >> number;
-  if (isEven(number))
-  {
-    cout << number << " is even";
+int main(){
+  int n;
+  cin >> n;
+  if (isEven(n)){
+    cout << n << " is even";
   }
-  else
-  {
-    cout << number << " is odd";
+  else {
+    cout << n << " is odd";
   }
-
 }

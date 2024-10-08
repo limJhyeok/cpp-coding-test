@@ -2,14 +2,11 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
+int main(){
   string str;
   cin >> str;
 
-  for (int i = 0; str[i] != '\0'; i++)
-  {
-    cout << str[i] << endl;
+  for (auto c: str){
+    cout << c << endl;
   }
-
 }
