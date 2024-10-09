@@ -1,18 +1,18 @@
 // 문자 리스트를 문자열로 변환하기
 #include <iostream>
-#include <vector>
 using namespace std;
 
-string solution(vector<string> arr){
-  string str;
-  int i = 0;
-  for (auto s: arr){
-    str += s;
-  }
-  return str;
+int crossCalculator(int a, int b){
+  string result = to_string(a) + to_string(b);
+  return stoi(result);
+}
+
+int solution(int a, int b){
+  return max(crossCalculator(a, b), crossCalculator(b, a)); 
 }
 
 int main(){
-  vector<string> arr = {"a", "b", "c"};
-  cout << solution(arr);
+  int a = 9;
+  int b = 91;
+  cout << solution(a, b);
 }

@@ -11,23 +11,12 @@ int doubleMultiplyCalculator(int a, int b){
   return 2*a*b;
 }
 
-int myMax(int a, int b){
-  if (a >= b){
-    return a;
-  }
-  return b;
-}
-
 int solution(int a, int b){
-  int answer = 0;
-  int crossResult= crossCalculator(a, b);
-  int doubleMultiplyResult = doubleMultiplyCalculator(a, b); 
-  answer = myMax(crossResult, doubleMultiplyResult);
-  return answer;
+  return max(crossCalculator(a, b), doubleMultiplyCalculator(a, b));
 }
 
 int main(){
-  int a = 2;
-  int b = 91;
+  int a = 91;
+  int b = 2;
   cout << solution(a, b);
 }
