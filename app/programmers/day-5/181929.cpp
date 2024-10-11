@@ -1,19 +1,23 @@
+// 원소들의 곱과 합
 #include <iostream>
 #include <vector>
 #include <math.h>
 
-int solution(std::vector<int> num_list){
-  int multiply = 1;
+using namespace std;
+
+int solution(vector<int> num_list){
+  int products = 1;
   int sumOfSquare = 0;
   for (auto num: num_list){
-    multiply *= num;
+    products *= num;
     sumOfSquare += num;
   }
-  sumOfSquare *= sumOfSquare;
-  return multiply < sumOfSquare;
+  sumOfSquare = pow(sumOfSquare, 2);
+  return products < sumOfSquare;
 }
 
 int main(){
-  std::vector<int> num_list = {5, 7, 8, 3};
-  std::cout << solution(num_list);
+  vector<int> num_list = {5, 7, 8, 3};
+  cout << solution(num_list) << endl;
+  return 0;
 }
