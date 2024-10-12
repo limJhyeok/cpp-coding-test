@@ -4,15 +4,11 @@
 using namespace std;
 
 vector<int> solution(vector<int> arr, vector<vector<int>> queries){
-  int temp;
-  for (int i = 0; i < size(queries); i++){
-    int prevIdx = queries[i][0];
-    for (int j = 1; j < size(queries[i]); j++){
-      int idx = queries[i][j];
-      temp = arr[idx];
-      arr[idx] = arr[prevIdx];
-      arr[prevIdx] = temp;
-      prevIdx = idx;
+  for (auto vec: queries){
+    for(int i = 0; i < size(vec) - 1; i++){
+      int temp = arr[vec[i]];
+      arr[vec[i]] = arr[vec[i+1]];
+      arr[vec[i+1]] = temp;
     }
   }
   return arr;
@@ -25,9 +21,9 @@ int main(){
     {1, 2},
     {1, 4}
   };
-  
-  arr = solution(arr, queries);
-  for (auto num: arr){
+  vector<int> answer = solution(arr, queries);
+  for (auto num: answer){
     cout << num << endl;
   }
+  return 0;
 }
