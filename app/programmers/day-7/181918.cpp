@@ -4,28 +4,20 @@
 using namespace std;
 
 vector<int> solution(vector<int> arr){
-  vector<int> stk;
   int i = 0;
-  while (true){
-    if (i >= size(arr)){
-      return stk;
-    }
-
-    size_t num_stk = size(stk);
-    if (size(stk) == 0){
+  vector<int> stk;
+  while (i < size(arr)){
+    size_t stkSize = size(stk);
+    bool isEmpty = (stkSize == 0);
+    bool isLastLessThanArr = (stk[stkSize-1] < arr[i]);
+    if (isEmpty || isLastLessThanArr){
       stk.push_back(arr[i]);
       i++;
       continue;
     }
-    if (stk[num_stk - 1] < arr[i]){
-      stk.push_back(arr[i]);
-      i++;
-      continue;
-    }
-    if (stk[num_stk - 1] >= arr[i]){
-      stk.pop_back();
-    }
+    stk.pop_back();
   }
+  return stk;
 }
 
 int main(){

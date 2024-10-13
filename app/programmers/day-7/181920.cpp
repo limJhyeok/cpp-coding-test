@@ -1,4 +1,4 @@
-// 카운트업
+// 카운트 업
 #include <iostream>
 #include <vector>
 using namespace std;

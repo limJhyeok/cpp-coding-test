@@ -5,22 +5,17 @@ using namespace std;
 
 vector<int> solution(int n){
   vector<int> answer = {n};
-  if (n == 1){
-    return answer;
-  }
-  while (true){
-    if (n == 1){
-      return answer;
-    }
+  if (n == 1){return answer;}
+  while (n != 1){
     if (n % 2 == 0){
       n /= 2;
       answer.push_back(n);
+      continue;
     }
-    else {
-      n = 3*n + 1;
-      answer.push_back(n);
-    }
+    n = 3*n + 1;
+    answer.push_back(n);
   }
+  return answer;
 }
 
 int main(){
@@ -29,4 +24,5 @@ int main(){
   for (auto num: answer){
     cout << num << endl;
   }
+  return 0;
 }
