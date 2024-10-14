@@ -1,16 +1,15 @@
 // 9로 나눈 나머지
 #include <iostream>
-#include <string>
-using namespace std;
 
-int solution(string number){
-    int sum = 0;
-    for (char c: number){
-        sum += (static_cast<int>(c) - static_cast<int>('0'));
+int solution(std::string number){
+    int answer = 0;
+    for (int i = 0; i < size(number); i++){
+        answer += (static_cast<int>(number[i]) - static_cast<int>('0'));
     }
-    return sum % 9;
+    return answer%9;
 }
+
 int main(){
-    string number = "78720646226947352489";
-    cout << solution(number);
+    std::string number = "78720646226947352489";
+    std::cout << solution(number) << std::endl;
 }
