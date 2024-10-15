@@ -1,33 +1,29 @@
+// 배열 만들기 5
 #include <iostream>
-#include <typeinfo>
 #include <vector>
-using namespace std;
 
-vector<int> solution(vector<string> intStrs, int k, int s, int l){
-    vector<int> answer;
-    for (string var: intStrs){
-        string strSlice = var.substr(s, l);
-        int intSlice = stoi(strSlice);
-        if (intSlice > k){
-            answer.push_back(intSlice);
+std::vector<int> solution(std::vector<std::string> intStrs, int k, int s, int l){
+    std::vector<int> answer;
+    for (auto intStr: intStrs){
+        int slice = stoi(intStr.substr(s, l));
+        if (slice > k){
+            answer.push_back(slice);
         }
     }
     return answer;
 }
 
 int main(){
-    int k = 50000;
-    int s = 5;
-    int l = 5;
-    vector<string> intStrs = {
+    std::vector<std::string> intStrs = {
         "0123456789",
         "9876543210",
         "9999999999999"
     };
-    vector<int> answer = solution(intStrs, k, s, l);
+    int k = 50000;
+    int s = 5;
+    int l = 5;
+    std::vector<int> answer = solution(intStrs, k, s, l);
     for (auto num: answer){
-        cout << num << endl;
+        std::cout << num << std::endl;
     }
-
-    // vector<string> subVec(intStrs[0].begin() + 5, intStrs[0].begin() + 10);
 }

@@ -1,23 +1,16 @@
 // 접미사인지 확인하기
 #include <iostream>
-#include <vector>
-
-std::vector<std::string> getSuffix(std::string my_string){
-    std::vector<std::string> suffix;
-    for (int i = 0; i < size(my_string); i++){
-        suffix.push_back(my_string.substr(i));
-    }
-    return suffix;
-}
 
 int solution(std::string my_string, std::string is_suffix){
-    std::vector<std::string> suffix = getSuffix(my_string);
-    for (auto str: suffix){
-        if (str == is_suffix){
-            return true;
-        }
+    size_t is_suffix_size = size(is_suffix);
+    if (is_suffix_size > size(my_string)){
+        return 0;
     }
-    return false;
+    std::string suffix = my_string.substr(size(my_string) - is_suffix_size);
+    if (suffix == is_suffix){
+        return 1;
+    }
+    return 0;
 }
 
 int main(){
