@@ -1,21 +1,41 @@
 // 배열 만들기 2
 #include <iostream>
-#include <math.h>
 #include <vector>
-#include <queue>
-using namespace std;
 
-vector<int> solution(int l, int r){
-  vector<int> answer = {};
+std::vector<int> solution(int l, int r){
+  std::vector<int> answer;
+  for (int i = l; i <= r; i++){
+    std::string strInt = std::to_string(i);
+    bool isOnlyFiveAndZero = true;
+    for (int i = 0; i < size(strInt); i++){
+      if (strInt[i] != '5'){
+        if (strInt[i] != '0'){
+          isOnlyFiveAndZero = false;
+          break;
+        }
+      }
+      if (strInt[i] != '5'){
+        if (strInt[i] != '0'){
+          isOnlyFiveAndZero = false;
+          break;
+        }
+      }
+    }
+    if (isOnlyFiveAndZero == true){
+      answer.push_back(std::stoi(strInt));
+    }
+  }
+  if (size(answer) == 0){
+    return {-1};
+  }
   return answer;
 }
 
 int main(){
-  int l = 5;
-  int r = 5555;
-  vector<int> answer = solution(l ,r);
+  int l = 10;
+  int r = 20;
+  std::vector<int> answer = solution(l, r);
   for (auto num: answer){
-    cout << num << endl;
+    std::cout << num << std::endl;
   }
-  return 0;
 }
