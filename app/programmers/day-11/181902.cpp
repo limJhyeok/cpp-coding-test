@@ -1,56 +1,26 @@
 // 문자 개수 세기
 #include <iostream>
+#include <vector>
 
-// 배열로 문제를 풀 경우
-
-int* solution(std::string my_string){
-    int* arr = new int[52];
-    const int upperCaseSize = static_cast<int>('Z'-'A');
+std::vector<int> solution(std::string my_string){
+    std::vector<int> answer(52, 0);
     for (char c: my_string){
-        if (c >= 'A' && c <= 'Z'){
-            arr[static_cast<int>(c - 'A')] += 1;
+        int i;
+        if (isupper(c)){
+            i = static_cast<int>(c) - static_cast<int>('A');
         }
-        if (c >= 'a' && c <= 'z'){
-            int idx = upperCaseSize + static_cast<int>(c - 'a') + 1;
-            arr[idx] += 1;
+        if (islower(c)){
+            i = (static_cast<int>(c) - static_cast<int>('a')) + (static_cast<int>('Z') - static_cast<int>('A')) + 1;
         }
+        answer[i] += 1;
     }
-    return arr;
+    return answer;
 }
-
 int main(){
     std::string my_string = "Programmers";
-    int* answer = solution(my_string);
-    for (int i = 0; i < 52; i++){
-        std::cout << answer[i] << " ";
+    std::vector<int> answer = solution(my_string);
+    for (auto num: answer){
+        std::cout << num << " ";
     }
-    std::cout << std::endl;
-    delete[] answer;
+    std::cout<<std::endl;
 }
-
-// #include <vector>
-
-// std::vector<int> solution(std::string my_string){
-//     std::vector<int> answer(52, 0);
-//     const int upperCaseSize = static_cast<int>('Z'-'A');
-//     for (char c: my_string){
-//         if (c >= 'A' && c <= 'Z'){
-//             answer[static_cast<int>(c - 'A')] += 1;
-//         }
-//         if (c >= 'a' && c <= 'z'){
-//             int idx = upperCaseSize + static_cast<int>(c - 'a') + 1;
-//             answer[idx] += 1;
-//         }
-//     }
-//     return answer;
-// }
-
-// int main(){
-//     std::string my_string = "Programmers";
-//     std::vector<int> answer = solution(my_string);
-//     for (auto num: answer){
-//         std::cout << num << " ";
-//     }    
-//     std::cout << std::endl;
-//     std::cout << size(answer) << std::endl;
-// }

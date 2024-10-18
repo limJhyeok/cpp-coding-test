@@ -10,7 +10,6 @@ std::vector<int> solution(int start_num, int end_num){
     return answer;
 }
 
-
 int main(){
     int start_num = 10;
     int end_num = 3;
