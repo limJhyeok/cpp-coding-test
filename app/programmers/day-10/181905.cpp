@@ -1,7 +1,6 @@
 // 문자열 뒤집기
 #include <iostream>
 #include <algorithm>
-
 std::string solution(std::string my_string, int s, int e){
     reverse(my_string.begin() + s, my_string.begin() + e + 1);
     return my_string;

@@ -3,10 +3,8 @@
 
 std::string solution(int q, int r, std::string code){
     std::string answer;
-    for (int i = 0; i < size(code); i++){
-        if (i%q == r){
-            answer += code[i];
-        }
+    for (int i = r; i < size(code); i += q){
+        answer += code[i];
     }
     return answer;
 }

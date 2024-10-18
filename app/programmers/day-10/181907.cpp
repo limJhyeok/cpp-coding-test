@@ -6,7 +6,7 @@ std::string solution(std::string my_string, int n){
 }
 
 int main(){
-    std::string my_string = "He110W0r1d"`;
+    std::string my_string = "He11oWOr1d";
     int n = 5;
     std::cout << solution(my_string, n) << std::endl;
 }
