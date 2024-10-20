@@ -1,12 +1,11 @@
+// 순서 바꾸기
 #include <iostream>
 #include <vector>
 
-std::vector<int> solution(std::vector<int> answer, int n){
-    std::vector<int> left = std::vector<int>(answer.begin(), answer.begin() + n);
-    std::vector<int> right = std::vector<int>(answer.begin() + n, answer.end());
-    for (auto num: left){
-        right.push_back(num);
-    }
+std::vector<int> solution(std::vector<int> num_list, int n){
+    std::vector<int> right = std::vector<int>(num_list.begin() + n, num_list.end());
+    std::vector<int> left = std::vector<int>(num_list.begin(), num_list.begin() + n);
+    right.insert(right.end(), left.begin(), left.end());
     return right;
 }
 
@@ -18,4 +17,5 @@ int main(){
         std::cout << num << " ";
     }
     std::cout << std::endl;
+
 }
