@@ -3,24 +3,24 @@
 #include <vector>
 
 std::vector<int> solution(std::vector<int> arr){
-    int left = -1;
-    int right = -1;
+    int first = -1;
+    int last = -1;
     for (int i = 0; i < size(arr); i++){
         if (arr[i] == 2){
-            if (left == -1){
-                left = i;
+            if (first == -1){
+                first = i;
             } else {
-                right = i;
+                last = i;
             }
         }
     }
-    if (left == -1){
+    if (first == -1){
         return {-1};
     }
-    if (right == -1){
+    if (last == -1){
         return {2};
     }
-    return std::vector<int>(arr.begin()+left, arr.begin() + right + 1);
+    return std::vector<int>(arr.begin() + first, arr.begin() + last + 1);
 }
 
 int main(){
@@ -30,5 +30,4 @@ int main(){
         std::cout << num << " ";
     }
     std::cout << std::endl;
-
 }
