@@ -3,7 +3,7 @@
 #include <vector>
 
 std::vector<int> solution(std::vector<int> arr, std::vector<std::vector<int>> queries){
-    for (auto query: queries){
+    for (std::vector<int> query: queries){
         int s = query[0];
         int e = query[1];
         for (int i = s; i <= e; i++){
@@ -13,7 +13,6 @@ std::vector<int> solution(std::vector<int> arr, std::vector<std::vector<int>> qu
     return arr;
 }
 
-
 int main(){
     std::vector<int> arr = {0, 1, 2, 3, 4};
     std::vector<std::vector<int>> queries = {
@@ -22,8 +21,8 @@ int main(){
         {2, 3}
     };
     std::vector<int> answer = solution(arr, queries);
-    for (auto num: answer){
-        std::cout << num << " ";
+    for (int n: answer){
+        std::cout << n << " ";
     }
     std::cout << std::endl;
 }

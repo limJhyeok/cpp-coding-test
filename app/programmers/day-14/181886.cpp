@@ -15,7 +15,7 @@ int main(){
         "nami", "ahri", "jayce", "garen", "ivern", "vex", "jinx"
     };
     std::vector<std::string> answer = solution(names);
-    for (auto name: answer){
+    for (std::string name: answer){
         std::cout << name << " ";
     }
     std::cout << std::endl;

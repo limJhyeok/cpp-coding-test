@@ -20,8 +20,8 @@ int main(){
         true, false, true, false
     };
     std::vector<std::string> answer = solution(todo_list, finished);
-    for (auto todo: answer){
+    for (std::string todo: answer){
         std::cout << todo << " ";
-    }    
+    }
     std::cout << std::endl;
 }

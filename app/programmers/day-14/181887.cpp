@@ -3,16 +3,15 @@
 #include <vector>
 
 int solution(std::vector<int> num_list){
-    int SumOfOddElemes = 0;
-    int SumOfEvenElemes = 0;
-
+    int oddElemSum = 0;
+    int evenElemSum = 0;
     for (int i = 0; i < size(num_list); i += 2){
-        SumOfOddElemes += num_list[i];
+        oddElemSum += num_list[i];
     }
     for (int i = 1; i < size(num_list); i += 2){
-        SumOfEvenElemes += num_list[i];
+        evenElemSum += num_list[i];
     }
-    return std::max(SumOfOddElemes, SumOfEvenElemes);
+    return (oddElemSum > evenElemSum) ? oddElemSum : evenElemSum;
 }
 
 int main(){
