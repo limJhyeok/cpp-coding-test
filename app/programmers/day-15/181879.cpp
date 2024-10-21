@@ -2,20 +2,27 @@
 #include <iostream>
 #include <vector>
 
+int sumOfElems(std::vector<int> num_list){
+    int sum = 0;
+        for (auto num: num_list){
+            sum += num;
+        }
+    return sum;
+}
+
+int productOfElems(std::vector<int> num_list){
+    int product = 1;
+    for (auto num: num_list){
+        product *= num;
+    }
+    return product;
+}
+
 int solution(std::vector<int> num_list){
     if (size(num_list) >= 11){
-        int answer = 0;
-        for (auto num: num_list){
-            answer += num;
-        }
-        return answer;
-    } else {
-        int answer = 1;
-        for (auto num: num_list){
-            answer *= num;
-        }
-        return answer;
+        return sumOfElems(num_list);
     }
+    return productOfElems(num_list);
 }
 
 int main(){

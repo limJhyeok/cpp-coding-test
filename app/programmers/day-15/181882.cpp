@@ -4,11 +4,11 @@
 
 std::vector<int> solution(std::vector<int> arr){
     for (int i = 0; i < size(arr); i++){
-        if (arr[i] >= 50 && arr[i] % 2 == 0){
+        if ((arr[i] >=50) && (arr[i] % 2 == 0)){
             arr[i] /= 2;
             continue;
         }
-        if (arr[i] < 50 && arr[i] % 2 == 1){
+        if ((arr[i] < 50) && (arr[i] % 2 == 1)){
             arr[i] *= 2;
             continue;
         }

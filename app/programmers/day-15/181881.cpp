@@ -4,22 +4,21 @@
 
 std::vector<int> transformArr(std::vector<int> arr){
     for (int i = 0; i < size(arr); i++){
-        if (arr[i] >=50 && arr[i] % 2 == 0){
+        if ((arr[i] >= 50) && (arr[i] % 2 == 0)){
             arr[i] /= 2;
-            continue;
         }
-        if (arr[i] < 50 && arr[i] % 2 == 1){
+        if ((arr[i] < 50) && (arr[i] % 2 == 1)){
             arr[i] = 2*arr[i] + 1;
-            continue;
         }
     }
     return arr;
 }
 
 int solution(std::vector<int> arr){
-    int x = 0;
-    std::vector<int> prev;
-    while (arr != prev){
+    std::vector<int> prev = arr;
+    int x = 1;
+    arr = transformArr(arr);
+    while (prev != arr){
         prev = arr;
         arr = transformArr(arr);
         x++;
@@ -32,5 +31,4 @@ int main(){
         1, 2, 3, 100, 99, 98
     };
     std::cout << solution(arr) << std::endl;
-
 }
