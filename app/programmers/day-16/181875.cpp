@@ -1,40 +1,31 @@
 // 배열에서 문자열 대소문자 변환하기
 #include <iostream>
 #include <vector>
-
-std::string tolowerStrAlphabet(std::string strAlphabet){
-    for (int i = 0; i < size(strAlphabet); i++){
-        strAlphabet[i] = tolower(strAlphabet[i]);
-    }
-    return strAlphabet;
-}
-
-std::string toupperStrAlphabet(std::string strAlphabet){
-    for (int i = 0; i < size(strAlphabet); i++){
-        strAlphabet[i] = toupper(strAlphabet[i]);
-    }
-    return strAlphabet;
-}
+#include <algorithm>
 
 std::vector<std::string> solution(std::vector<std::string> strArr){
-    for (int i = 0; i < size(strArr); i++){
-        if (i % 2 == 0){
-            strArr[i] = tolowerStrAlphabet(strArr[i]);
-        }
-        if (i % 2 == 1){
-            strArr[i] = toupperStrAlphabet(strArr[i]);
-        }
+    for (int i = 0; i < size(strArr); i += 2){
+        std::string strElem = strArr[i];
+        std::transform(strElem.begin(), strElem.end(), strElem.begin(), ::tolower);
+        strArr[i] = strElem;
+    }
+    for (int i = 1; i < size(strArr); i += 2){
+        std::string strElem = strArr[i];
+        std::transform(strElem.begin(), strElem.end(), strElem.begin(), ::toupper);
+        strArr[i] = strElem;
     }
     return strArr;
 }
 
 int main(){
     std::vector<std::string> strArr = {
-        "AAA","BBB","CCC","DDD"
+        "aBc","AbC"
     };
+
     std::vector<std::string> answer = solution(strArr);
-    for (std::string alphabet: answer){
-        std::cout << alphabet << " ";
+    for (std::string str: answer){
+        std::cout << str << " ";
     }
     std::cout << std::endl;
+
 }

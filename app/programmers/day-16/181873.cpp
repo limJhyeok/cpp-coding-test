@@ -1,4 +1,4 @@
-// 특정한 문자를 대문자로 바꾸기
+// 특저안 문자를 대문자로 바꾸기
 #include <iostream>
 
 std::string solution(std::string my_string, std::string alp){
