@@ -3,29 +3,30 @@
 #include <vector>
 
 std::vector<std::string> solution(std::string my_string){
-    std::string word;
+    std::string temp = "";
     std::vector<std::string> answer;
-    for (char c: my_string){
-        if (c == ' '){
-            if (word != ""){
-                answer.push_back(word);
-                word = "";
+    for (int i = 0; i < size(my_string); i++){
+        if (my_string[i] == ' '){
+            if (size(temp) != 0){
+                answer.push_back(temp);
+                temp = "";
             }
-        }else{
-            word += c;
+        }else {
+            temp += my_string[i];
         }
     }
-    if (word != ""){
-        answer.push_back(word);
+    if (size(temp) != 0){
+        answer.push_back(temp);
     }
     return answer;
 }
 
+
 int main(){
-    std::string my_string = " i    love  you";
+    std::string my_string = "  programmers";
     std::vector<std::string> answer = solution(my_string);
-    for (std::string str: answer){
-        std::cout << str << ", ";
+    for (std::string s: answer){
+        std::cout << s << " ";
     }
     std::cout << std::endl;
 }

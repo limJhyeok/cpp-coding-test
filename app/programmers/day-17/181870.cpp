@@ -2,24 +2,11 @@
 #include <iostream>
 #include <vector>
 
-bool isPatternExist(std::string str, std::string pattern){
-    if (size(str) < size(pattern)){
-        return false;
-    }
-    for (int i = 0; i <= size(str) - size(pattern); i++){
-        if (str.substr(i, size(pattern)) == pattern){
-            return true;
-        }
-    }
-    return false;
-}
-
 std::vector<std::string> solution(std::vector<std::string> strArr){
-    std::string pattern = "ad";
     std::vector<std::string> answer;
-    for (std::string str: strArr){
-        if (!isPatternExist(str, pattern)){
-            answer.push_back(str);
+    for (int i = 0; i < size(strArr); i++){
+        if (strArr[i].find("ad") == std::string::npos){
+            answer.push_back(strArr[i]);
         }
     }
     return answer;
@@ -30,8 +17,8 @@ int main(){
         "there","are","no","a","ds"
     };
     std::vector<std::string> answer = solution(strArr);
-    for (std::string str: answer){
-        std::cout << str << " ";
+    for (std::string s: answer){
+        std::cout << s << " ";
     }
     std::cout << std::endl;
 }

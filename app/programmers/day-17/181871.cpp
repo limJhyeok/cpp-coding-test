@@ -4,16 +4,16 @@
 int solution(std::string myString, std::string pat){
     int count = 0;
     for (int i = 0; i <= size(myString) - size(pat); i++){
-        std::string myStringSlice = myString.substr(i, size(pat));
-        if (myStringSlice == pat){
-            count++;
+        std::string mySubstr = myString.substr(i, size(pat));
+        if (mySubstr == pat){
+            count ++;
         }
     }
     return count;
 }
 
 int main(){
-    std::string myString = "banana";
-    std::string pat = "ana";
+    std::string myString = "aaaa";
+    std::string pat = "aa";
     std::cout << solution(myString, pat) << std::endl;
 }

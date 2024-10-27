@@ -2,16 +2,14 @@
 #include <iostream>
 
 std::string solution(std::string myString, std::string pat){
-    size_t myStringSize = size(myString);
-    for (int i = myStringSize; i >= 0; i--){
-        std::string myStringSlice = myString.substr(i - size(pat), size(pat));
-        if (myStringSlice == pat){
-            return myString.substr(0, i);
+    for (int i = size(myString) - size(pat); i >= 0; i--){
+        std::string mySubstr = myString.substr(i, size(pat));
+        if (mySubstr == pat){
+            return myString.substr(0, i + size(pat));
         }
     }
     return "";
 }
-
 
 int main(){
     std::string myString = "AAAAaaaa";
