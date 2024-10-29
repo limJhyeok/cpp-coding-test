@@ -6,28 +6,28 @@
 std::vector<std::string> solution(std::string myString){
     std::string temp;
     std::vector<std::string> answer;
-    for (char c: myString){
-        if (c == 'x'){
-            if (temp != ""){
+    for (int i = 0; i < size(myString); i++){
+        if (myString[i] == 'x'){
+            if (size(temp) != 0){
                 answer.push_back(temp);
-                temp = "";
             }
+            temp = "";
         } else {
-            temp += c;
+            temp += myString[i];
         }
     }
-    if (temp != ""){
+    if (size(temp) != 0){
         answer.push_back(temp);
     }
-    std::sort(answer.begin(), answer.end());
+    sort(answer.begin(), answer.end());
     return answer;
 }
 
 int main(){
-    std::string myString = "dxccxbbbxaaaa";
+    std::string myString = "axbxcxdx";
     std::vector<std::string> answer = solution(myString);
-    for (auto str: answer){
-        std::cout << str << " ";
+    for (std::string s: answer){
+        std::cout << s << " ";
     }
     std::cout << std::endl;
 }

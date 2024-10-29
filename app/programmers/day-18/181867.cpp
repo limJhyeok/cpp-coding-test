@@ -3,18 +3,17 @@
 #include <vector>
 
 std::vector<int> solution(std::string myString){
-    int count = 0;
+    int counter = 0;
     std::vector<int> answer;
     for (int i = 0; i < size(myString); i++){
-        if (myString[i] == 'x'){
-            answer.push_back(count);
-            count = 0;
-            continue;
-        } else{
-            count += 1;
+        if(myString[i] == 'x'){
+            answer.push_back(counter);
+            counter = 0;
+        } else {
+            counter++;
         }
     }
-    answer.push_back(count);
+    answer.push_back(counter);
     return answer;
 }
 

@@ -2,41 +2,33 @@
 #include <iostream>
 #include <vector>
 
-std::vector<std::string> split(std::string str){
-    std::vector<std::string> splitResult;
+int solution(std::string binomial){
     std::string temp;
-    for (int i = 0; i < size(str); i++){
-        if (str[i] == ' '){
-            splitResult.push_back(temp);
+    std::vector<std::string> vec;
+    for (int i = 0; i < size(binomial); i++){
+        if (binomial[i] == ' '){
+            vec.push_back(temp);
             temp = "";
         } else{
-            temp += str[i];
+            temp += binomial[i];
         }
     }
-    splitResult.push_back(temp);
-    return splitResult;
-}
-
-
-int solution(std::string binomial){
-    std::vector<std::string> splitResult = split(binomial);
-    int a = stoi(splitResult[0]);
-    int b = stoi(splitResult[2]);
-
-    std::string op = splitResult[1];
-    if (op == "+"){
+    vec.push_back(temp);
+    int a = stoi(vec[0]);
+    int b = stoi(vec[2]);
+    if (vec[1] == "+"){
         return a + b;
     }
-    if (op == "-"){
+    if (vec[1] == "-"){
         return a - b;
     }
-    if (op == "*"){
+    if (vec[1] == "*"){
         return a * b;
     }
     return -1;
 }
 
 int main(){
-    std::string binomial = "40000 * 40000";
+    std::string binomial = "0 - 7777";
     std::cout << solution(binomial) << std::endl;
 }
