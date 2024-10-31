@@ -4,13 +4,16 @@
 #include <map>
 
 int solution(std::vector<std::string> strArr){
-    std::map<int, int> m;
-    for (std::string s: strArr){
-        m[size(s)]++;
+    std::map<int, int> strSizeCounter;
+
+    for (std::string strElem: strArr) {
+        strSizeCounter[size(strElem)] += 1;
     }
+
     int maxCount = -1;
-    for (auto pair: m){
-        if(maxCount < pair.second){
+    int answer;
+    for (auto pair: strSizeCounter) {
+        if(pair.second > maxCount) {
             maxCount = pair.second;
         }
     }
@@ -22,5 +25,4 @@ int main(){
         "a","bc","d","efg","hi"
     };
     std::cout << solution(strArr) << std::endl;
-
 }

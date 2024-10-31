@@ -4,11 +4,12 @@
 
 std::vector<int> solution(std::vector<int> arr, int n){
     if (size(arr) % 2 == 1){
-        for (int i = 0; i < size(arr); i += 2){
+        for(int i = 0; i < size(arr); i += 2){
             arr[i] += n;
         }
         return arr;
     }
+
     for (int i = 1; i < size(arr); i += 2){
         arr[i] += n;
     }
@@ -17,11 +18,13 @@ std::vector<int> solution(std::vector<int> arr, int n){
 
 int main(){
     std::vector<int> arr = {
-        444, 555, 666, 777
+        49, 12, 100, 276, 33
     };
-    int n = 100;
+    int n = 27;
+
     std::vector<int> answer = solution(arr, n);
-    for (int num: answer){
+
+    for (int num: answer) {
         std::cout << num << " ";
     }
     std::cout << std::endl;

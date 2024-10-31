@@ -4,24 +4,22 @@
 #include <math.h>
 
 std::vector<int> solution(std::vector<int> arr){
-    double powerOfTwo = std::log(size(arr)) / std::log(2);
-    int floor = std::floor(powerOfTwo);
-    if (powerOfTwo == floor){
+    float powerOfTwo = std::log(size(arr)) / std::log(2);
+    if (floor(powerOfTwo) == powerOfTwo){
         return arr;
     }
-    size_t arrSize = size(arr);
-    for (int i = 0; i < pow(2, floor + 1) - arrSize; i++){
-        arr.push_back(0);
-    }
+    std::vector<int> surplus = std::vector<int>(pow(2, ceil(powerOfTwo)) - size(arr), 0);
+    arr.insert(arr.end(), surplus.begin(), surplus.end());
     return arr;
 }
 
 int main(){
-    std::vector<int> arr = {1, 2, 3, 4, 5, 6};
-    
+    std::vector<int> arr = {58, 172, 746, 89};
     std::vector<int> answer = solution(arr);
-    for (int num: answer){
+
+    for (int num: answer) {
         std::cout << num << " ";
     }
     std::cout << std::endl;
+
 }
