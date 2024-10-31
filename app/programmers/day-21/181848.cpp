@@ -2,7 +2,7 @@
 #include <iostream>
 
 int solution(std::string n_str){
-    return std::stoi(n_str);
+    return stoi(n_str);
 }
 
 int main(){

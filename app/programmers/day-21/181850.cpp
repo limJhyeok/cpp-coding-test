@@ -1,6 +1,5 @@
 // 정수 부분
 #include <iostream>
-#include <vector>
 #include <math.h>
 
 int solution(double flo){

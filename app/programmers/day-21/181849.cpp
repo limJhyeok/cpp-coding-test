@@ -1,19 +1,17 @@
 // 문자열 정수의 합
 #include <iostream>
 
-int transformCharToInt(char c){
-    return (static_cast<int>(c) - static_cast<int>('0'));
-}
-
 int solution(std::string num_str){
     int answer = 0;
+    int num;
     for (char c: num_str){
-        answer += transformCharToInt(c);
+        num = c - '0';
+        answer += num;        
     }
     return answer;
 }
 
 int main(){
-    std::string num_str = "1000000";
+    std::string num_str = "10000";
     std::cout << solution(num_str) << std::endl;
 }
