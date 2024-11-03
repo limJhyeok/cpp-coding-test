@@ -11,6 +11,6 @@ std::string solution(std::string myString){
 }
 
 int main(){
-    std::string myString = "jjnnllkkmm";
+    std::string myString = "abcdevwxyz";
     std::cout << solution(myString) << std::endl;
 }

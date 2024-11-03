@@ -4,29 +4,33 @@
 
 std::vector<std::string> solution(std::vector<std::string> picture, int k){
     std::vector<std::string> answer;
-    for (std::string row: picture){
-        std::string answerRow;
-        for (char pixel: row){
-            for (int i = 0; i < k; i++){
-                answerRow += pixel;
+    std::string answer_row;
+    
+    for (std::string row: picture) {
+        for (char pixel: row) {
+            for (int i = 0; i < k; i++){       
+                answer_row += pixel;
             }
         }
-        for (int i = 0; i < k; i ++){
-            answer.push_back(answerRow);
+        for (int i = 0; i < k; i++){
+            answer.push_back(answer_row);
         }
+        answer_row = "";
     }
     return answer;
 }
 
 int main(){
     std::vector<std::string> picture = {
-        ".xx...xx.", "x..x.x..x", "x...x...x", ".x.....x.", "..x...x..", "...x.x...", "....x...."
+        "x.x", ".x.", "x.x"
     };
+    int k = 3;
 
-    int k = 10;
     std::vector<std::string> answer = solution(picture, k);
-    for (std::string s: answer){
-        std::cout << s << std::endl;
+    for (std::string row: answer) {
+        for (char pixel: row) {
+            std::cout << pixel;
+        }
+        std::cout << std::endl;
     }
-    std::cout << std::endl;
 }

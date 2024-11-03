@@ -7,12 +7,11 @@ std::vector<int> solution(std::vector<int> arr, int k){
         for (int i = 0; i < size(arr); i++){
             arr[i] *= k;
         }
+        return arr;
     }
-    if (k % 2 == 0){
-        for (int i = 0; i < size(arr); i++){
-            arr[i] += k;
-        }
-    }
+    for (int i = 0; i < size(arr); i++){
+        arr[i] += k;
+    }    
     return arr;
 }
 
@@ -21,9 +20,10 @@ int main(){
         1, 2, 3, 100, 99, 98
     };
     int k = 3;
+
     std::vector<int> answer = solution(arr, k);
-    for (int num: answer){
-        std::cout << num << " ";
+
+    for (int num: answer) {
+        std::cout << num << std::endl;
     }
-    std::cout << std::endl;
 }
