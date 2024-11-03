@@ -3,22 +3,22 @@
 #include <vector>
 
 int solution(std::vector<std::vector<int>> board, int k){
-    int rowSize = size(board);
-    int columnSize = size(board[0]);
-    int sum = 0;
-    for (int i = 0; i < rowSize; i++) {
-        for (int j = 0; j < columnSize; j++) {
+    int n_rows = size(board);
+    int n_cols = size(board[0]);
+    int answer = 0;
+    for (int i = 0; i < n_rows; i++){
+        for (int j = 0; j < n_cols; j++){
             if (i + j <= k){
-                sum += board[i][j];
+                answer += board[i][j];
             }
         }
     }
-    return sum;
+    return answer;
 }
 
 int main(){
     std::vector<std::vector<int>> board = {
-        {0, 1, 2},{1, 2, 3},{2, 3, 4},{3, 4, 5}
+        {0, 1, 2}, {1, 2, 3}, {2, 3, 4}, {3, 4, 5}
     };
     int k = 2;
     std::cout << solution(board, k) << std::endl;
