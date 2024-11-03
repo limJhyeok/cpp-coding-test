@@ -2,11 +2,10 @@
 #include <iostream>
 
 int solution(std::string str1, std::string str2){
-    if (size(str1) > size(str2)){
-        return 0;
-    }
+    if (size(str1) > size(str2)) return 0;
     for (int i = 0; i <= size(str2) - size(str1); i++){
-        if (str2.substr(i, size(str1)) == str1){
+        std::string str2_substr = str2.substr(i, size(str1));
+        if (str2_substr == str1){
             return 1;
         }
     }
