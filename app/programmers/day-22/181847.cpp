@@ -10,7 +10,12 @@ std::string solution(std::string n_str){
     return "";
 }
 
+std::string anotherSolution(std::string n_str) {
+    std::string answer = std::to_string(stoi(n_str));
+    return answer;
+}
+
 int main(){
-    std::string n_str = "0";
+    std::string n_str = "854020";
     std::cout << solution(n_str) << std::endl;
 }

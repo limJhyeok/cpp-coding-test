@@ -1,3 +1,4 @@
+// 문자열로 변환
 #include <iostream>
 
 std::string solution(int n){
@@ -5,6 +6,6 @@ std::string solution(int n){
 }
 
 int main(){
-    int n = 100000;
+    int n = 123;
     std::cout << solution(n) << std::endl;
 }

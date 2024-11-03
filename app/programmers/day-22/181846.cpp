@@ -1,46 +1,49 @@
+// 두 수의 합
 #include <iostream>
-#include <vector>
+#include <algorithm>
 
-int charToInt(char c){
-    return (static_cast<int>(c) - static_cast<int>('0'));
+char charToInt(char c){
+    return c - '0';
 }
 
-std::string padLeftZero(std::string a, std::string strToPad){
-    size_t sizeDiff = a.size() > strToPad.size() ? a.size() - strToPad.size() : 0;
-    std::string temp;
-    for (int i = 0; i < sizeDiff; i++){
-        temp += "0";
+bool isLongerString(std::string a, std::string b){
+    return size(a) > size(b);
+}
+
+std::string leftZeroPad(std::string a, int numberOfZeroPad){
+    std::string padded;
+    padded.reserve(size(a) + numberOfZeroPad);
+    for (int i = 0; i < numberOfZeroPad; i++){
+        padded += '0';
     }
-    return temp + strToPad;
+    padded.append(a);
+    return padded;
 }
 
 std::string solution(std::string a, std::string b){
-    int buffer = 0;
-    std::vector<int> stk;
-    a = padLeftZero(b, a);
-    b = padLeftZero(a, b);
-    for (int i = size(a) - 1; 0 <= i; i--){
-        int addResult = (buffer + charToInt(a[i]) + charToInt(b[i]));
-        int remainder = addResult % 10;
-        buffer = addResult / 10;
-        stk.push_back(remainder);
-    }
-    if (buffer != 0){
-        stk.push_back(buffer);
-    }
+    std::string temp = "0";
     std::string answer;
-
-    while (!stk.empty()){
-        answer += std::to_string(stk.back());
-        stk.pop_back();
+    int addResult = 0;
+    int base = 2;
+    if(isLongerString(a, b)){
+        b = leftZeroPad(b, size(a) - size(b));
+    } else{
+        a = leftZeroPad(a, size(b) - size(a));
     }
+    for (int i = size(a) - 1; i >= 0; i--){
+        addResult = std::stoi(temp) + charToInt(a[i]) + charToInt(b[i]);
+        temp = std::to_string(addResult / base);
+        answer += std::to_string(addResult % base);
+    }
+    if (temp != "0"){
+        answer += temp;
+    }
+    std::reverse(answer.begin(), answer.end());
     return answer;
 }
 
-
-
 int main(){
-    std::string a = "0";
-    std::string b = "20";
+    std::string a = "101";
+    std::string b = "011";
     std::cout << solution(a, b) << std::endl;
 }
