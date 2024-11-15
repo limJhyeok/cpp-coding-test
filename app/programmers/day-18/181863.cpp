@@ -1,20 +1,19 @@
 // rny_string
 #include <iostream>
 
-std::string solution(std::string rny_string){
-    std::string answer;
-    for (char c: rny_string){
-        if (c == 'm'){
-            answer += "rn";
-        } else{
-            answer += c;
-        }
+std::string solution(std::string rny_string) {
+  std::string answer;
+  for (char c : rny_string) {
+    if (c == 'm') {
+      answer += "rn";
+    } else {
+      answer += c;
     }
-    return answer;
+  }
+  return answer;
 }
 
-
-int main(){
-    std::string rny_string = "jerry";
-    std::cout << solution(rny_string) << std::endl;
+int main() {
+  std::string rny_string = "jerry";
+  std::cout << solution(rny_string) << std::endl;
 }

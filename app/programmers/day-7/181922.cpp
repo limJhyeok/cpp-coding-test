@@ -4,13 +4,13 @@
 
 using namespace std;
 
-vector<int> solution(vector<int> arr, vector<vector<int>> queries){
-  for (auto query: queries){
+vector<int> solution(vector<int> arr, vector<vector<int>> queries) {
+  for (auto query : queries) {
     int s = query[0];
     int e = query[1];
     int k = query[2];
-    for (int i = s; i <=e; i++){
-      if (i % k == 0){
+    for (int i = s; i <= e; i++) {
+      if (i % k == 0) {
         arr[i] += 1;
       }
     }
@@ -18,15 +18,11 @@ vector<int> solution(vector<int> arr, vector<vector<int>> queries){
   return arr;
 }
 
-int main(){
+int main() {
   vector<int> arr = {0, 1, 2, 4, 3};
-  vector<vector<int>> queries = {
-    {0, 4, 1},
-    {0, 3, 2},
-    {0, 3, 3}
-  };
+  vector<vector<int>> queries = {{0, 4, 1}, {0, 3, 2}, {0, 3, 3}};
   arr = solution(arr, queries);
-  for (auto num: arr){
+  for (auto num : arr) {
     cout << num << endl;
   }
 

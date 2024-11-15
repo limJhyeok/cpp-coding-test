@@ -2,14 +2,14 @@
 #include <iostream>
 using namespace std;
 
-int solution(int a, int b, bool flag){
-  if (flag){
+int solution(int a, int b, bool flag) {
+  if (flag) {
     return a + b;
   }
-  return a -b;
+  return a - b;
 }
 
-int main(){
+int main() {
   int a = -4;
   int b = 7;
   bool flag = false;

@@ -1,14 +1,14 @@
 // 소문자로 바꾸기
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 
-std::string solution(std::string myString){
-    std::transform(myString.begin(), myString.end(), myString.begin(), ::tolower);
-    return myString;
+std::string solution(std::string myString) {
+  std::transform(myString.begin(), myString.end(), myString.begin(), ::tolower);
+  return myString;
 }
 
-int main(){
-    std::string myString = "aBcDeFg";
-    std::string answer = solution(myString);
-    std::cout << answer << std::endl;
+int main() {
+  std::string myString = "aBcDeFg";
+  std::string answer = solution(myString);
+  std::cout << answer << std::endl;
 }

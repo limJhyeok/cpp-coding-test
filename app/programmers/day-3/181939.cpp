@@ -3,18 +3,15 @@
 #include <vector>
 using namespace std;
 
-
-string solution(vector<string> arr){
+string solution(vector<string> arr) {
   string answer;
-  for (auto c: arr){
+  for (auto c : arr) {
     answer += c;
   }
   return answer;
-  
 }
 
-
-int main(){
+int main() {
   vector<string> arr = {"a", "b", "c"};
   cout << solution(arr);
 }

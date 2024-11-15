@@ -2,11 +2,11 @@
 #include <iostream>
 using namespace std;
 
-int main(){
+int main() {
   string str;
   cin >> str;
 
-  for (auto c: str){
+  for (auto c : str) {
     cout << c << endl;
   }
 }

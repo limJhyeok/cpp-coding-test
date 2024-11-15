@@ -1,12 +1,11 @@
 // 정수 부분
-#include <iostream>
 #include <math.h>
 
-int solution(double flo){
-    return floor(flo);
-}
+#include <iostream>
 
-int main(){
-    double flo = 1.42;
-    std::cout << solution(flo) << std::endl;
+int solution(double flo) { return floor(flo); }
+
+int main() {
+  double flo = 1.42;
+  std::cout << solution(flo) << std::endl;
 }

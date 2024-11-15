@@ -2,25 +2,25 @@
 #include <iostream>
 using namespace std;
 
-int solution(int n, string control){
-  for (char c: control){
-    if (c == 'w'){
+int solution(int n, string control) {
+  for (char c : control) {
+    if (c == 'w') {
       n += 1;
-    } 
-    if (c == 's'){
+    }
+    if (c == 's') {
       n -= 1;
-    } 
-    if (c == 'd'){
+    }
+    if (c == 'd') {
       n += 10;
-    } 
-    if (c == 'a'){
+    }
+    if (c == 'a') {
       n -= 10;
-    } 
+    }
   }
   return n;
 }
 
-int main(){
+int main() {
   int n;
   string control = "wsdawsdassw";
   cout << solution(n, control);
