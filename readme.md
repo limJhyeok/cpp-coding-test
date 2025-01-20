@@ -1,6 +1,6 @@
 # CPP coding test
 
-이 리포지토리는 C++언어를 사용하여 코딩테스트를 준비하는 목적으로 작성되었습니다.
+이 리포지토리는 C++ 언어를 사용하여 코딩 테스트를 준비하는 목적으로 작성되었습니다. 프로그래밍 문제 풀이와 다양한 알고리즘을 연습할 수 있도록 구성되어 있습니다.
 
 ## Coding Test
 1. [프로그래머스 기초문제 (day 1 ~ day 25)](https://github.com/limJhyeok/cpp-coding-test/tree/main/app/programmers)
