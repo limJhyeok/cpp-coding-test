@@ -1,3 +1,10 @@
+# CPP coding test
+
+이 리포지토리는 C++언어를 사용하여 코딩테스트를 준비하는 목적으로 작성되었습니다.
+
+## Coding Test
+1. [프로그래머스 기초문제 (day 1 ~ day 25)](https://github.com/limJhyeok/cpp-coding-test/tree/main/app/programmers)
+
 ## 사용법
 
 ### container 구동 및 bash 진입
@@ -23,6 +30,19 @@ sudo apt-get install -y g++
 ```
 3. .vscode/c_pp_properites.json 설정
 
+### 자동 포매터(style: google)
+1. clang-format, pre-commit 설치
+```bash
+sudo apt install -y clang-format 
+pip install pre-commit
+```
+
+### container 종료
+```bash
+docker-compose down
+```
+
+## Util
 ### 두 함수 실행시간 비교 방법
 ```cpp
 // 경로에 맞게 app/utils/timer_tuils.h 파일 include
